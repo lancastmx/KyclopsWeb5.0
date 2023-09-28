@@ -1,0 +1,313 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000; /* Fondo del reproductor */
+    color: white; /* Color de texto */
+}
+
+/* Contenedor principal */
+.repodictor {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    align-items: center;
+    background-color: #000;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1);
+    animation: whiteRedGlow 3s alternate infinite;
+    align-content: center;
+    margin: 2rem;
+    border-radius: 1rem;
+}
+
+/* Barra de sonido */
+/* Barra de sonido */
+.barra-sonido {
+    grid-column: 3; /* Ocupa la tercera columna */
+    grid-row: 1 / span 2; /* Ocupa dos filas */
+    background-color: #3d3333;
+    height: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Punto de control */
+.punto-control {
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%; /* Inicialmente al 50% */
+    transform: translateX(-50%);
+    bottom: -10px;
+    cursor: pointer;
+}
+
+/* Triángulo */
+.triangulo {
+    border-left: 0px solid transparent;
+    border-right: 0px solid transparent;
+    border-bottom: 20px solid white;
+    position: absolute;
+    bottom: 0;
+}
+
+@keyframes whiteRedGlow {
+    from {
+        box-shadow: 0px -4px 10px rgba(255, 255, 255, 0.5);
+    }
+    to {
+        box-shadow: 0px -4px 10px rgba(255, 0, 0, 0.5);
+    }
+}
+
+/* Foto de la Canción */
+/* Estilos para la foto de la banda */
+.banda-img {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    box-shadow: 0 0 1rem rgba(255, 255, 255, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Al pasar el mouse, se quita la máscara de recorte y se hace más grande */
+.banda-img:hover {
+    transform: scale(1.1); /* Escala al pasar el mouse */
+    border-radius: 0%; /* Quita el recorte circular */
+    box-shadow: none; /* Quita la sombra */
+}
+.foto-de-cancion {
+    flex: 2;
+    padding-right: 0px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    /* flex-wrap: nowrap; */
+}
+
+.foto-container {
+    width: 196px;
+    height: 171px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    position: relative;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+.foto-container:hover {
+    transform: scale(1.1); /* Escala al pasar el mouse */
+}
+
+.foto-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+/* Efecto de sombra en la foto */
+.shadow-animation {
+    animation: shadowOscillation 4s ease-in-out infinite alternate;
+}
+
+@keyframes shadowOscillation {
+    0% {
+        box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.5); /* Blanco */
+    }
+    100% {
+        box-shadow: 0px 0px 10px rgba(255, 0, 0, 0); /* Rojo */
+    }
+}
+
+/* Descripción de la Canción */
+.Descricion-Cancion {
+    flex: 3;
+    text-align: center;
+}
+
+.titulo-Cancion {
+    color: red; /* Color rojo para el título */
+    animation: neonBlink 1s ease-in-out infinite alternate; /* Efecto neon parpadeante */
+}
+
+.Nombre-Cancion {
+    /* Agrega estilos adicionales si es necesario */
+}
+
+@keyframes neonBlink {
+    0% {
+        opacity: 1;
+        text-shadow: 0 0 5px red;
+    }
+    100% {
+        opacity: 0.8;
+        text-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red;
+    }
+}
+
+/* Botones del Reproductor */
+.botonesde-reproductor {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+}
+
+.botones {
+    display: flex;
+}
+
+.circle {
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+    margin: 45px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+    background: radial-gradient(circle at center, #3d3333 0%, black 63%);
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+/* Cambio de tamaño al pasar el mouse */
+.circle:hover {
+    transform: scale(1.2); /* Escala al pasar el mouse */
+}
+
+/* Alineación vertical y horizontal de las imágenes dentro de los botones */
+.circle img {
+    display: block;
+    margin: auto;
+}
+
+
+@media (max-width: 768px) {
+    /* Oculta la barra de sonido en dispositivos móviles */
+    .repodictor {
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr;
+        align-items: center;
+        background-color: #000;
+        padding: 20px;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1);
+        animation: whiteRedGlow 3s alternate infinite;
+        align-content: center;
+        margin: 2rem;
+        border-radius: 1rem;
+    }
+    .foto-container {
+        width: 5rem;
+        height: 5rem;
+        overflow: hidden;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+        position: relative;
+        display: flex;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+        border-radius: 1rem;
+        margin-left: 0.5rem;
+        padding: 0.5rem;
+    }
+
+    /* Ajusta el tamaño de la imagen de la banda con unidades rem */
+    .banda-img {
+        width: 8rem; /* Tamaño más pequeño para la imagen */
+        height: 8rem;
+    }
+
+    /* Estilos para los botones de "Me gusta" y "Play" con unidades rem */
+    .circle.heart, .circle.play {
+        width: 4;
+        height: 4rem;
+        margin: 1rem;
+    }
+
+    /* Oculta la barra de volumen y el punto de control */
+    .barra-sonido,
+    .punto-control,
+    .volume {
+        display: none; /* Oculta la barra de volumen y el punto de control */
+    }
+}
+
+
+
+/* Estilos para dispositivos móviles con un ancho máximo de 375px */
+@media (max-width: 375px) {
+    /* Cambia el contenedor principal a una sola fila */
+    
+.repodictor {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    align-items: center;
+    background-color: #000;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1);
+    animation: whiteRedGlow 3s alternate infinite;
+    align-content: center;
+    margin: 0.5rem;
+    border-radius: 1rem;
+}
+    .foto-container {
+        width: 5rem;
+        height: 5rem;
+        overflow: hidden;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+        position: relative;
+        display: flex;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+        border-radius: 1rem;
+        margin-left: 0.5rem;
+        padding: 0.5rem;
+    }
+
+    /* Ajusta el tamaño de la imagen de la banda con unidades rem */
+    .banda-img {
+        width: 8rem; /* Tamaño más pequeño para la imagen */
+        height: 8rem;
+    }
+    .Descricion-Cancion {
+        flex: 3;
+        text-align: start;
+    }
+    /* Estilos para los botones de "Me gusta" y "Play" con unidades rem */
+    .circle.heart, .circle.play {
+        width: 4;
+        height: 4rem;
+        margin: 1rem;
+    }
+
+    /* Oculta la barra de volumen y el punto de control */
+    .barra-sonido,
+    .punto-control {
+        display: none; /* Oculta la barra de volumen y el punto de control */
+    }
+}
+

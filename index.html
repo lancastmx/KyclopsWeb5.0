@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KyclopsWeb5.0</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div>
+        <h1>KyclopsRadio</h1>
+    </div>
+    <div>
+        <h2>Transform translate</h2>
+        <p></p>
+        <section class="repodictor">
+            <div class="foto-de-cancion">
+                <div class="foto-container">
+                    <img src="./img/FotoPerfilBanda.png" alt="" class="banda-img">
+                </div>
+            </div>
+            <div class="Descricion-Cancion">
+                <p class="titulo-Cancion">Titulo</p>
+                <p class="Nombre-Cancion">Descripción</p>
+            </div>
+            <div>
+                <!-- Barra de sonido -->
+                <div class="barra-sonido">
+                    <div class="triangulo"></div> <!-- Elemento para el triángulo -->
+                    <div class="punto-control"></div> <!-- Punto de control transparente -->
+                </div>
+                <div class="botonesde-reproductor">
+                    <div class="botones">
+                        <!-- Botón de "Me gusta" (corazón) -->
+                        <div class="circle heart" id="heart" onclick="toggleLike()">
+                            <img src="./img/OffHeart.png" alt="">
+                        </div>
+                        <!-- Botón de reproducción/pausa -->
+                        <div class="circle play" id="play" onclick="togglePlay()">
+                            <img src="./img/PlayOff.png" alt="">
+                        </div>
+                        <!-- Botón de volumen -->
+                        <div class="circle volume" id="volume" onclick="toggleVolume()">
+                            <img src="./img/VolumenHigh.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Reproductor de audio -->
+            <audio src="https://stream-069.zeno.fm/n0x77d1wgxhvv?zs=79AKhFoDRN-5UZt8ucONAw" id="audio"></audio>           
+        </section>
+    </div>
+    <script src="play.js"></script>
+</body>
+</html>
+
